@@ -1,1 +1,50 @@
+@import 'variables';
 @import '../../node_modules/bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.cdnfonts.com/css/futura-std-4');
+
+body,
+#navbar {
+  margin: 0 2rem;
+  background-color: $bg-color;
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+#logo {
+  width: 3rem;
+}
+
+h1 {
+  font-family: 'Futura Std', sans-serif;
+}
+
+.navbar-toggler {
+  color: $hamburger-color;
+}
+
+.box {
+  background-color: $modal-bg-color;
+  border-top: 2px solid $border-color;
+  border-radius: 4px;
+  padding: 2rem 4rem;
+}
+
+.btn-main {
+  background-color: $btn-primary-color;
+  color: $btn-text-color;
+  text-transform: uppercase;
+  &:hover {
+    background-color: $bg-color;
+    border: 1px solid $btn-primary-color;
+    transition: all 0.5s;
+  }
+}
+
+.btn-submit {
+  width: 100%;
+}
