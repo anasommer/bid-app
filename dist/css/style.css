@@ -11868,12 +11868,22 @@ main {
   width: 3rem;
 }
 
-h1, .h1 {
+h1, .h1,
+label {
   font-family: "Futura Std", sans-serif;
 }
 
 .navbar-toggler {
   color: #04787c;
+}
+
+.nav-item a {
+  color: #303036;
+  font-size: 1.2rem;
+}
+.nav-item a:hover {
+  text-decoration: underline;
+  transition: all 0.5s;
 }
 
 .box {
@@ -11896,6 +11906,15 @@ h1, .h1 {
 
 .btn-submit {
   width: 100%;
+}
+
+.active {
+  text-decoration: underline;
+  text-decoration-color: #04787c;
+}
+
+.form-control::placeholder {
+  color: #a9a9b6;
 }
 
 /*# sourceMappingURL=style.css.map */

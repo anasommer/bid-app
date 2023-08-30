@@ -19,12 +19,22 @@ main {
   width: 3rem;
 }
 
-h1 {
+h1,
+label {
   font-family: 'Futura Std', sans-serif;
 }
 
 .navbar-toggler {
   color: $hamburger-color;
+}
+
+.nav-item a {
+  color: $text-color;
+  font-size: 1.2rem;
+  &:hover {
+    text-decoration: underline;
+    transition: all 0.5s;
+  }
 }
 
 .box {
@@ -47,4 +57,13 @@ h1 {
 
 .btn-submit {
   width: 100%;
+}
+
+.active {
+  text-decoration: underline;
+  text-decoration-color: $border-color;
+}
+
+.form-control::placeholder {
+  color: $placeholder-color;
 }
