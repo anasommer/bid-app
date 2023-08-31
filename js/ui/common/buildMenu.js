@@ -16,8 +16,8 @@ export default function buildMenu() {
                         </li>
                         <li class="nav-item">
                             <a class="nav-link ${
-                              path === '/profile/' ? 'active' : ''
-                            }" aria-current="page" href="/profile">Profile</a>
+                              path === '/profile/profile.html' ? 'active' : ''
+                            }" aria-current="page" href="/profile/profile.html">Profile</a>
                         </li>
                         <li class="nav-item">
                         <a
@@ -43,7 +43,7 @@ export default function buildMenu() {
   <li class="nav-item">
     <a class="nav-link ${
       path === '/profile/login.html' ? 'active' : ''
-    }" aria-current="page" href="login.html"
+    }" aria-current="page" href="/profile/login.html"
       >Login </a
     >
   </li>
