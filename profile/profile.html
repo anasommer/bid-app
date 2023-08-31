@@ -52,7 +52,29 @@ https://cdn.jsdelivr.net/npm/futura-font@1.0.0/styles.min.css
       </div>
     </nav>
     <main>
-      <div id="profile"></div>
+      <div id="profile">
+        <div class="container mt-3 box shadow">
+          <div class="row justify-content-center">
+            <h1 class="text-center">Your Profile</h1>
+
+            <div class="col-sm-4" id="avatarEl"></div>
+            <div class="col-sm-8" id="profileEl"></div>
+            <div class="col-sm-10">
+              <input
+                id="avatar"
+                class="form-control update"
+                type="url"
+                name="avatar"
+                placeholder="URL to avatar"
+              />
+
+              <button class="btn btn-main btn-submit update" id="update-btn">
+                Update
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script type="module" src="../js/index.js"></script>

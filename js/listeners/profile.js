@@ -1,11 +1,16 @@
 import { BASE_URL } from '../api/apiBase.js';
+import spinner from '../ui/utils/spinner.js';
+import createPage from '../api/profile/createPage.js';
+
+const profileEl = document.querySelector('#profile');
 
 export async function profile() {
+  profileEl.append(spinner);
   const token = localStorage.getItem('accessToken');
   const endpoint = `/auction/profiles/${JSON.parse(
     localStorage.getItem('username')
   )}`;
-  console.log(endpoint);
+
   const method = 'GET';
   const options = {
     method,
@@ -17,6 +22,7 @@ export async function profile() {
   if (token) {
     await fetch(`${BASE_URL}${endpoint}`, options)
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((profile) => createPage(profile));
+    spinner.style.display = 'none';
   }
 }

@@ -11917,4 +11917,32 @@ label {
   color: #a9a9b6;
 }
 
+.avatar {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.update {
+  max-width: 80%;
+  margin-top: 1rem;
+}
+
+.credit {
+  color: #fc2a21;
+}
+
+#avatar,
+#update-btn {
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */
