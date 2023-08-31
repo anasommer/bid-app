@@ -1,3 +1,5 @@
+import updateAvatar from '../../listeners/updateAvatar.js';
+
 export default function createPage(profile) {
   const { name, email, avatar, credits } = profile;
   const avatarEl = document.querySelector('#avatarEl');
@@ -33,4 +35,5 @@ export default function createPage(profile) {
 
   const updateBtn = document.querySelector('#update-btn');
   updateBtn.style.display = 'block';
+  updateBtn.addEventListener('click', updateAvatar);
 }

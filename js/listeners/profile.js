@@ -1,4 +1,5 @@
 import { BASE_URL } from '../api/apiBase.js';
+
 import spinner from '../ui/utils/spinner.js';
 import createPage from '../api/profile/createPage.js';
 
