@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css & live-server"
+    "build": "sass scss:css",
+    "watch": "sass --watch scss:css"
   },
   "author": "Anastassia Sommer",
   "license": "ISC",

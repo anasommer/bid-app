@@ -2,7 +2,7 @@
 Builds a dymanic menu 
 */
 
-export function buildMenu() {
+export default function buildMenu() {
   const menu = document.querySelector('#menu');
   const path = window.location.pathname;
   const token = localStorage.getItem('accessToken');
