@@ -6,13 +6,12 @@ export default function buildMenu() {
   const menu = document.querySelector('#menu');
   const path = window.location.pathname;
   const token = localStorage.getItem('accessToken');
-  const username = JSON.parse(localStorage.getItem('username'));
 
   if (token) {
     menu.innerHTML = `
                         <li class="nav-item">
                         <a class="nav-link ${
-                          path === '/' || path === '/index.html' ? 'active' : ''
+                          path === '/' || path === '/index' ? 'active' : ''
                         }" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item">
@@ -25,7 +24,7 @@ export default function buildMenu() {
                           class="btn btn-warning" id="logout-btn"
                           aria-current="page"
                           href="/"
-                          >Log Out ${username}</a
+                          >Log Out </a
                         >
                       </li>
                     `;
@@ -43,7 +42,7 @@ export default function buildMenu() {
   </li>
   <li class="nav-item">
     <a class="nav-link ${
-      path === '/src/user/login.html' ? 'active' : ''
+      path === '/profile/login.html' ? 'active' : ''
     }" aria-current="page" href="login.html"
       >Login </a
     >
@@ -51,8 +50,8 @@ export default function buildMenu() {
   <li class="nav-item">
  
     <a class="nav-link  ${
-      path === '/' || path === '/src/user/register.html' ? 'active' : ''
-    } " aria-current="page" href="register.html">Sign Up</a>
+      path === '/profile/register.html' ? 'active' : ''
+    } " aria-current="page" href="/profile/register.html">Sign Up</a>
   </li>
     `;
   }

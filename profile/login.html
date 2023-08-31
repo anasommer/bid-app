@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up to Bid</title>
+    <title>Login to Bid</title>
     <link
       href="
 https://cdn.jsdelivr.net/npm/futura-font@1.0.0/styles.min.css
 "
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../../dist/css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg">
@@ -54,25 +54,12 @@ https://cdn.jsdelivr.net/npm/futura-font@1.0.0/styles.min.css
     <main>
       <div class="container mt-3 box shadow">
         <div class="row justify-content-center">
-          <h1 class="text-center">Sign Up</h1>
+          <h1 class="text-center">Login</h1>
           <div id="message"></div>
           <div class="col-12 col-md-6">
             <form id="registerForm">
               <div class="form-group mb-3">
-                <label for="name">Name:</label>
-                <input
-                  class="form-control"
-                  type="text"
-                  name="name"
-                  required
-                  pattern="^[\w]+$"
-                  title="Username must only contain lowercase and uppercase letters, numbers & underscore. Example: Good_Username123 "
-                  id="name"
-                  autocomplete="username"
-                />
-              </div>
-              <div class="form-group mb-3">
-                <label for="email">Email:</label>
+                <label for="email">Email</label>
                 <input
                   class="form-control"
                   id="email"
@@ -80,12 +67,13 @@ https://cdn.jsdelivr.net/npm/futura-font@1.0.0/styles.min.css
                   name="email"
                   required
                   pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
-                  title="Only @(stud.)noroff.no are allowed to register."
+                  title="Only @(stud.)noroff.no registered users are allowed to enter"
                   autocomplete="email"
+                  placeholder="Email"
                 />
               </div>
               <div class="form-group mb-3">
-                <label for="password">Password:</label>
+                <label for="password">Password</label>
                 <input
                   id="password"
                   class="form-control"
@@ -93,15 +81,17 @@ https://cdn.jsdelivr.net/npm/futura-font@1.0.0/styles.min.css
                   name="password"
                   required
                   minlength="8"
+                  placeholder="Password"
                 />
               </div>
-              <button class="btn btn-main btn-submit">Sign up</button>
+
+              <button class="btn btn-main btn-submit">Login</button>
             </form>
           </div>
         </div>
       </div>
     </main>
-    <script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script type="module" src="../js/index.js"></script>
   </body>
 </html>
