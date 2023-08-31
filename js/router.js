@@ -13,5 +13,8 @@ export default function router() {
     case '/profile/login.html':
       listeners.login();
       break;
+    case '/profile/profile.html':
+      listeners.profile();
+      break;
   }
 }

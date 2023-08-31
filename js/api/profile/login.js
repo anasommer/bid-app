@@ -28,7 +28,7 @@ export async function handleLogin(profile) {
     );
     console.log(result.name);
     localStorage.setItem('username', JSON.stringify(result.name));
-    localStorage.setItem('credits', JSON.stringify(1000));
+    localStorage.setItem('credits', JSON.stringify(result.credits));
     redirectToListings(token);
   } catch (error) {
     displayMessage('warning', error);
