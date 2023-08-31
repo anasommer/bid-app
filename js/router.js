@@ -8,6 +8,7 @@ export default function router() {
 
   switch (pathname) {
     case '/profile/register.html':
+      listeners.register();
       break;
   }
 }

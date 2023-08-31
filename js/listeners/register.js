@@ -1,6 +1,11 @@
 import { BASE_URL } from '../api/apiBase.js';
 import { getData } from '../api/getData.js';
 
+/**
+ * Function for handling registration of a new user.
+ * Collects form data and makes API call to the server, if entered information is correct, then user will see a success message, if something is wrong then user will get the error message.
+ */
+
 export async function register() {
   const form = document.querySelector('#registerForm');
 
@@ -19,8 +24,7 @@ export async function register() {
         'Content-type': 'application/json; charset=UTF-8',
       },
     };
-    console.log(profile);
-    console.log(getData(BASE_URL, endpoint, registerOptions));
+    getData(BASE_URL, endpoint, registerOptions);
+    form.reset();
   });
 }
-// register();
