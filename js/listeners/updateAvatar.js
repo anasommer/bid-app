@@ -3,16 +3,12 @@ import token from '../helpers/token.js';
 
 export default function updateAvatar(avatar) {
   const avatarUrl = document.querySelector('#avatar').value;
-  console.log(avatarUrl);
 
   const endpoint = `/auction/profiles/${JSON.parse(
     localStorage.getItem('username')
   )}/media`;
   const method = 'PUT';
   const options = {
-    headers: {
-      'Content-Type': 'application/json',
-    },
     method,
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
