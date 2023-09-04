@@ -1,5 +1,6 @@
-import { BASE_URL } from '../api/apiBase.js';
 import { makeApiCall } from '../api/makeApiCall.js';
+import createOptions from '../api/createOptions.js';
+import { displayMessage } from '../ui/common/displayMessage.js';
 
 /**
  * Function for handling registration of a new user.
@@ -9,7 +10,7 @@ import { makeApiCall } from '../api/makeApiCall.js';
 export async function register() {
   const form = document.querySelector('#registerForm');
 
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const profile = Object.fromEntries(formData.entries());
@@ -17,14 +18,19 @@ export async function register() {
     const endpoint = '/auction/auth/register';
     const method = 'POST';
 
-    const registerOptions = {
-      method,
-      body: JSON.stringify(profile),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    };
-    getData(BASE_URL, endpoint, registerOptions);
+    const options = createOptions(method, profile);
+
+    const { error } = await makeApiCall(endpoint, options);
+
+    if (error) {
+      return displayMessage('danger', error);
+    }
+
+    displayMessage(
+      'success',
+      `You have successfully registered, please <a href="../../profile/login.html">login</a>`
+    );
+
     form.reset();
   });
 }
