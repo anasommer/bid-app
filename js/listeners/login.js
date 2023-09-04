@@ -22,6 +22,17 @@ export async function login() {
 
     if (error) {
       return displayMessage('danger', error);
+    } else {
+      const token = localStorage.setItem(
+        'accessToken',
+        JSON.stringify(data.accessToken)
+      );
+
+      localStorage.setItem('username', JSON.stringify(data.name));
+      localStorage.setItem('credits', JSON.stringify(data.credits));
+
+      form.reset();
+      window.location.href = '../../index.html';
     }
   });
 }
