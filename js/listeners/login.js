@@ -1,20 +1,27 @@
-import { handleLogin } from '../api/profile/login.js';
+import { makeApiCall } from '../api/makeApiCall.js';
+import createOptions from '../api/createOptions.js';
+import { displayMessage } from '../ui/common/displayMessage.js';
 
 /**
  * Performs a login operation
  */
-export function login() {
+export async function login() {
   const form = document.querySelector('#registerForm');
 
-  /**
-   * Event listener for the form submisiion
-   * @param {event} event - The submit event.
-   */
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const profile = Object.fromEntries(formData.entries());
 
-    handleLogin(profile);
+    const endpoint = '/auction/auth/login';
+    const method = 'POST';
+
+    const options = createOptions(method, profile);
+
+    const { data, error } = await makeApiCall(endpoint, options);
+
+    if (error) {
+      return displayMessage('danger', error);
+    }
   });
 }
