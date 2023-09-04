@@ -1,4 +1,5 @@
 import * as listeners from './listeners/index.js';
+import showFeed from './helpers/showFeed.js';
 
 /**
  * Router for JS files
@@ -15,6 +16,9 @@ export default function router() {
       break;
     case '/profile/profile.html':
       listeners.profile();
+      break;
+    case '/':
+      showFeed();
       break;
   }
 }
