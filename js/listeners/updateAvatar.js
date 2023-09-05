@@ -1,4 +1,3 @@
-import { BASE_URL } from '../api/apiBase.js';
 import createOptions from '../api/createOptions.js';
 
 import { makeApiCall } from '../api/makeApiCall.js';
