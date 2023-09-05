@@ -1,7 +1,7 @@
 export default function createHtml(listing) {
   const listingsContainer = document.querySelector('#listingsContainer');
-  console.log(listing);
-  const { title, description, media, endsAt, _count } = listing;
+
+  const { title, description, media, endsAt, _count, id } = listing;
 
   const listingDiv = document.createElement('div');
   listingDiv.classList.add('col-12', 'col-sm-6', 'col-lg-4', 'py-2', 'd-flex');
@@ -33,7 +33,7 @@ export default function createHtml(listing) {
   endsAtEl.textContent = `Ends in: ${date.getDay()} day(s) ${date.getHours()} hour(s) ${date.getMinutes()} minutes`;
 
   const bidBtnEl = document.createElement('a');
-  bidBtnEl.setAttribute('href', '/');
+  bidBtnEl.setAttribute('href', `?id=${id}`);
   bidBtnEl.classList.add('bidLink', 'btn-main', 'btn', 'align-self-stretch');
   bidBtnEl.textContent = 'See more';
 
