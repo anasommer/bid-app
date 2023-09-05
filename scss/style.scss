@@ -96,3 +96,14 @@ li {
 #update-btn {
   display: none;
 }
+
+.endTime {
+  display: block;
+  color: $danger-color;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.bidLink {
+  text-align: center;
+}

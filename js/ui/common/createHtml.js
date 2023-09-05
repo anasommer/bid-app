@@ -1,29 +1,47 @@
 export default function createHtml(listing) {
   const listingsContainer = document.querySelector('#listingsContainer');
-
+  console.log(listing);
   const { title, description, media, endsAt, _count } = listing;
 
   const listingDiv = document.createElement('div');
-  listingDiv.classList.add('col-12', 'col-sm-12', 'col-lg-6', 'text-center');
+  listingDiv.classList.add('col-12', 'col-sm-6', 'col-lg-4', 'py-2', 'd-flex');
+
   const listingBody = document.createElement('div');
-  listingBody.classList.add('card-body');
+  listingBody.classList.add(
+    'card-body',
+    'card',
+    'h-100',
+    'd-flex',
+    'align-items-baseline'
+  );
 
   const titleEl = document.createElement('h2');
   titleEl.textContent = title;
   listingBody.append(titleEl);
 
+  const descEl = document.createElement('p');
+  descEl.textContent = description;
+
   const imageEl = document.createElement('img');
   imageEl.setAttribute('src', media[0]);
-  imageEl.classList.add('listingImg', 'card-img-top');
+  imageEl.classList.add('listingImg', 'thumbnail');
 
-  const descEl = document.createElement('p');
-  descEl.classList.add('card-text');
-  descEl.textContent = description;
+  const endsAtEl = document.createElement('span');
+  endsAtEl.classList.add('endTime');
+  const date = new Date(endsAt);
+
+  endsAtEl.textContent = `Ends in: ${date.getDay()} day(s) ${date.getHours()} hour(s) ${date.getMinutes()} minutes`;
+
+  const bidBtnEl = document.createElement('a');
+  bidBtnEl.setAttribute('href', '/');
+  bidBtnEl.classList.add('bidLink', 'btn-main', 'btn', 'align-self-stretch');
+  bidBtnEl.textContent = 'See more';
+
+  listingBody.append(imageEl);
+  listingBody.append(titleEl);
+  descEl.append(endsAtEl);
   listingBody.append(descEl);
-
+  listingBody.append(bidBtnEl);
   listingDiv.append(listingBody);
-
-  listingDiv.append(imageEl);
-
   listingsContainer.append(listingDiv);
 }

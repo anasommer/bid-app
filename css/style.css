@@ -4299,7 +4299,7 @@ textarea.form-control-lg {
   --bs-card-cap-padding-x: 1rem;
   --bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.03);
   --bs-card-cap-color: ;
-  --bs-card-height: ;
+  --bs-card-height: 100%;
   --bs-card-color: ;
   --bs-card-bg: var(--bs-body-bg);
   --bs-card-img-overlay-padding: 1rem;
@@ -11944,6 +11944,17 @@ li {
 #avatar,
 #update-btn {
   display: none;
+}
+
+.endTime {
+  display: block;
+  color: #fc2a21;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.bidLink {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
