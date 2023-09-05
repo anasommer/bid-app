@@ -1,5 +1,5 @@
 import createOptions from '../api/createOptions.js';
-
+import token from '../api/token.js';
 import { makeApiCall } from '../api/makeApiCall.js';
 
 export async function updateAvatar(avatar) {
@@ -13,7 +13,7 @@ export async function updateAvatar(avatar) {
     avatar: avatarUrl,
   };
   const headers = {
-    Authorization: `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}`,
+    Authorization: `Bearer ${JSON.parse(token)}`,
   };
 
   const options = createOptions(method, bodyData, headers);
