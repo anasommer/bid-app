@@ -1,38 +1,28 @@
 import { BASE_URL } from '../api/apiBase.js';
-import token from '../helpers/token.js';
+import createOptions from '../api/createOptions.js';
 
-export default function updateAvatar(avatar) {
+import { makeApiCall } from '../api/makeApiCall.js';
+
+export async function updateAvatar(avatar) {
   const avatarUrl = document.querySelector('#avatar').value;
-  console.log(avatarUrl);
 
   const endpoint = `/auction/profiles/${JSON.parse(
     localStorage.getItem('username')
   )}/media`;
   const method = 'PUT';
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    method,
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-      Authorization: `Bearer ${JSON.parse(token)}`,
-    },
-
-    body: JSON.stringify({
-      avatar: avatarUrl,
-    }),
+  const bodyData = {
+    avatar: avatarUrl,
+  };
+  const headers = {
+    Authorization: `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}`,
   };
 
-  updateUrl(BASE_URL, endpoint, options);
-}
+  const options = createOptions(method, bodyData, headers);
 
-async function updateUrl(BASE_URL, endpoint, options) {
-  try {
-    await fetch(`${BASE_URL}${endpoint}`, options);
-  } catch (error) {
-    console.log(error);
-  } finally {
+  const { data, error } = await makeApiCall(endpoint, options);
+  if (data) {
     location.reload();
+  } else {
+    return displayMessage('danger', error);
   }
 }

@@ -1,4 +1,4 @@
-import updateAvatar from '../../listeners/updateAvatar.js';
+import { updateAvatar } from '../../listeners/updateAvatar.js';
 
 export default function createPage(profile) {
   const { name, email, avatar, credits } = profile;
