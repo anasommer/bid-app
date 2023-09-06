@@ -1,32 +1,19 @@
-import getListingId from "../../helpers/getListingId.js";
-import { BASE_URL } from "../constants.js";
-import createHtml from "../../ui/common/createHtml.js";
+import getListingId from '../../helpers/getListingId.js';
 
+const token = localStorage.getItem('accessToken');
 
-const token = localStorage.getItem("accessToken");
-
-/**
- * Fetches and displays a post by its ID.
- *
- * @returns {void}
- */
-export async function showPostById() {
+export async function showListingById() {
   const id = getListingId();
-
-  const endpoint = "
-  /auction/listings/";
-  const method = "GET";
-  const options = {
-    method,
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-      Authorization: `Bearer ${JSON.parse(token)}`,
-    },
-  };
-  
-  console.log(id)
+  console.log('working', id);
+  // const endpoint = '/auction/listings/';
+  // const method = 'GET';
+  // const options = {
+  //   method,
+  //   headers: {
+  //     'Content-type': 'application/json; charset=UTF-8',
+  //     Authorization: `Bearer ${JSON.parse(token)}`,
+  //   },
+  // };
 
   // here goes the function that will make a call to the API
 }
-
-showPostById();

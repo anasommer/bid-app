@@ -33,7 +33,7 @@ export default function createHtml(listing) {
   endsAtEl.textContent = `Ends in: ${date.getDay()} day(s) ${date.getHours()} hour(s) ${date.getMinutes()} minutes`;
 
   const bidBtnEl = document.createElement('a');
-  bidBtnEl.setAttribute('href', `?id=${id}`);
+  bidBtnEl.setAttribute('href', `listings/index.html?id=${id}`);
   bidBtnEl.classList.add('bidLink', 'btn-main', 'btn', 'align-self-stretch');
   bidBtnEl.textContent = 'See more';
 

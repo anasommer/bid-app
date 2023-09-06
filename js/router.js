@@ -1,5 +1,6 @@
 import * as listeners from './listeners/index.js';
 import { showFeed } from './helpers/showFeed.js';
+import { showListingById } from './api/listings/showListingById.js';
 
 /**
  * Router for JS files
@@ -20,6 +21,9 @@ export default function router() {
     case '/':
     case '/index.html':
       showFeed();
+      break;
+    case '/listings/index.html':
+      showListingById();
       break;
   }
 }

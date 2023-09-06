@@ -3,9 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Bid</title>
+    <link
+      href="
+https://cdn.jsdelivr.net/npm/futura-font@1.0.0/styles.min.css
+"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    LISTINGS
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/"
+          ><img src="../../img/logo.png" alt="Bid logo" id="logo"
+        /></a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="menu"></ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              id="search"
+            />
+            <button
+              class="btn btn-outline-success"
+              type="submit"
+              id="search-btn"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div>
+        <h1 class="text-center">Listings</h1>
+        <div class="row" id="listingsContainer"></div>
+      </div>
+    </main>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="module" src="../js/index.js"></script>
   </body>
 </html>

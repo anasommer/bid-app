@@ -1,5 +1,6 @@
 import { BASE_URL } from '../api/apiBase.js';
 import createHtml from '../ui/common/createHtml.js';
+
 let listingsToShow = 12;
 const endpoint = `/auction/listings`;
 
