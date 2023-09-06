@@ -9,6 +9,10 @@ export default function router() {
   const pathname = window.location.pathname;
 
   switch (pathname) {
+    case '/':
+    case '/index.html':
+      showFeed();
+      break;
     case '/profile/register.html':
       listeners.register();
       break;
@@ -18,10 +22,7 @@ export default function router() {
     case '/profile/profile.html':
       listeners.profile();
       break;
-    case '/':
-    case '/index.html':
-      showFeed();
-      break;
+
     case '/listings/index.html':
       showListingById();
       break;
