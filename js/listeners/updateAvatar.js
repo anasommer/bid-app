@@ -1,5 +1,5 @@
 import createOptions from '../api/createOptions.js';
-import token from '../api/token.js';
+
 import { makeApiCall } from '../api/makeApiCall.js';
 
 export async function updateAvatar(avatar) {
@@ -12,11 +12,8 @@ export async function updateAvatar(avatar) {
   const bodyData = {
     avatar: avatarUrl,
   };
-  const headers = {
-    Authorization: `Bearer ${JSON.parse(token)}`,
-  };
 
-  const options = createOptions(method, bodyData, headers);
+  const options = createOptions(method, bodyData);
 
   const { data, error } = await makeApiCall(endpoint, options);
   if (data) {
