@@ -1,5 +1,4 @@
 import * as listeners from './listeners/index.js';
-import { showFeed } from './helpers/showFeed.js';
 import { showListingById } from './api/listings/showListingById.js';
 
 /**
@@ -11,7 +10,9 @@ export default function router() {
   switch (pathname) {
     case '/':
     case '/index.html':
-      showFeed();
+      const listAuctions = listeners.getAuctions();
+      listAuctions();
+      listeners.loadMore(listAuctions);
       break;
     case '/profile/register.html':
       listeners.register();
