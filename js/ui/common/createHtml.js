@@ -43,5 +43,6 @@ export default function createHtml(listing) {
   listingBody.append(descEl);
   listingBody.append(bidBtnEl);
   listingDiv.append(listingBody);
+
   listingsContainer.append(listingDiv);
 }
