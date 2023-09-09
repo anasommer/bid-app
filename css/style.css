@@ -11957,4 +11957,9 @@ li {
   text-align: center;
 }
 
+#detailsContainer {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
 /*# sourceMappingURL=style.css.map */

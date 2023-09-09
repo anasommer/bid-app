@@ -2,8 +2,9 @@ export default function createHtmlById(data) {
   const { title, description, media, endsAt, _count, id, tags, updated } = data;
 
   const container = document.querySelector('#detailsContainer');
+  const listingTitleEl = document.querySelector('#listingTitle');
   const listingDiv = document.createElement('div');
-  listingDiv.classList.add('col-12', 'col-sm-12', 'col-lg-8', 'py-2', 'd-flex');
+  listingDiv.classList.add('col-12', 'py-2', 'd-flex');
 
   const listingBody = document.createElement('div');
   listingBody.classList.add(
@@ -13,9 +14,8 @@ export default function createHtmlById(data) {
     'd-flex',
     'align-items-baseline'
   );
-  const titleEl = document.createElement('h2');
-  titleEl.textContent = title;
-  listingBody.append(titleEl);
+
+  listingTitleEl.textContent = title;
 
   const descEl = document.createElement('p');
   if (description) {
@@ -41,7 +41,6 @@ export default function createHtmlById(data) {
   bidBtnEl.classList.add('bidLink', 'btn-main', 'btn', 'align-self-stretch');
   bidBtnEl.textContent = 'See more';
 
-  listingBody.append(titleEl);
   descEl.append(endsAtEl);
   listingBody.append(imageEl);
   listingBody.append(descEl);
