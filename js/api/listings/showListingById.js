@@ -1,4 +1,5 @@
 import getListingId from '../../helpers/getListingId.js';
+import createHtmlById from '../../ui/common/createHtmlById.js';
 import createOptions from '../createOptions.js';
 import { makeApiCall } from '../makeApiCall.js';
 
@@ -15,6 +16,7 @@ export async function showListingById() {
   const { data, error } = await makeApiCall(endpoint, options);
   if (data) {
     console.log(data);
+    createHtmlById(data);
   } else {
     return displayMessage('danger', error);
   }
