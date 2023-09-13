@@ -1,6 +1,5 @@
 import * as listeners from './listeners/index.js';
 import { showListingById } from './api/listings/showListingById.js';
-import createHtml from './ui/common/createHtml.js';
 
 /**
  * Router for JS files

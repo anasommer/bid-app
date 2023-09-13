@@ -1,17 +1,29 @@
 export default function createHtmlById(data) {
   const { title, description, media, endsAt, _count, id, tags, updated } = data;
 
+  console.log(data);
+
   const container = document.querySelector('#detailsContainer');
   const listingTitleEl = document.querySelector('#listingTitle');
   const listingDiv = document.createElement('div');
-  listingDiv.classList.add('col-12', 'py-2', 'd-flex');
+  listingDiv.classList.add(
+    'col-12',
+    'col-md-8',
+    'col-lg-8',
+    'offset-lg-2',
+    'offset-md-2',
+    'py-2',
+    'd-flex'
+  );
 
   const listingBody = document.createElement('div');
   listingBody.classList.add(
     'card-body',
     'card',
+    'col-lg-3',
     'h-100',
     'd-flex',
+
     'align-items-baseline'
   );
 
@@ -22,9 +34,33 @@ export default function createHtmlById(data) {
     descEl.textContent = description;
   }
 
+  const tagsEl = document.createElement('p');
+  if (tags) {
+    tagsEl.textContent = `#Tags: ${tags}`;
+  }
+
+  const countEl = document.createElement('p');
+  if (_count.bids) {
+    countEl.textContent = `Bids: ${_count.bids}`;
+    countEl.classList.add('bids');
+  }
+  const gallery = document.createElement('div');
+  gallery.classList.add('gallery');
+
   const imageEl = document.createElement('img');
   if (media.length >= 1) {
     imageEl.setAttribute('src', media[0]);
+    listingBody.append(imageEl);
+    for (let i = 0; i < media.length; i++) {
+      const img = document.createElement('img');
+      img.setAttribute('src', media[i]);
+      img.classList.add('img-thumbnail', 'w-100');
+      gallery.append(img);
+      img.addEventListener('click', (e) => {
+        imageEl.setAttribute('src', e.target.src);
+      });
+      listingBody.append(gallery);
+    }
   } else {
     imageEl.setAttribute('src', '../../../img/no-image.jpeg');
   }
@@ -37,13 +73,17 @@ export default function createHtmlById(data) {
   endsAtEl.textContent = `Ends in: ${date.getDay()} day(s) ${date.getHours()} hour(s) ${date.getMinutes()} minutes`;
 
   const bidBtnEl = document.createElement('a');
-  bidBtnEl.setAttribute('href', `listings/details.html?id=${id}`);
   bidBtnEl.classList.add('bidLink', 'btn-main', 'btn', 'align-self-stretch');
-  bidBtnEl.textContent = 'See more';
+  bidBtnEl.textContent = 'Bid';
+  bidBtnEl.addEventListener('click', () => {
+    alert('bid');
+  });
 
   descEl.append(endsAtEl);
-  listingBody.append(imageEl);
+
   listingBody.append(descEl);
+  listingBody.append(tagsEl);
+  listingBody.append(countEl);
   listingBody.append(bidBtnEl);
   listingDiv.append(listingBody);
 

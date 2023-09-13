@@ -11962,4 +11962,18 @@ li {
   max-width: 800px;
 }
 
+.gallery {
+  display: flex;
+}
+
+.img-thumbnail {
+  max-width: 40%;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.bids {
+  color: #04787c;
+}
+
 /*# sourceMappingURL=style.css.map */
