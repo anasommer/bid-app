@@ -76,7 +76,13 @@ export default function createHtmlById(data) {
   bidBtnEl.classList.add('bidLink', 'btn-main', 'btn', 'align-self-stretch');
   bidBtnEl.textContent = 'Bid';
   bidBtnEl.addEventListener('click', () => {
-    alert('bid');
+    if (localStorage.getItem('accessToken')) {
+      // open modal to place a bid
+      alert('bid');
+    } else {
+      // show a message, that user needs to register to bid
+      alert('please register');
+    }
   });
 
   descEl.append(endsAtEl);
