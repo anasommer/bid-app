@@ -1,10 +1,10 @@
 export default function createHtmlById(data) {
   const { title, description, media, endsAt, _count, id, tags, updated } = data;
 
-  console.log(data);
-
   const container = document.querySelector('#detailsContainer');
   const listingTitleEl = document.querySelector('#listingTitle');
+  listingTitleEl.textContent = title;
+
   const listingDiv = document.createElement('div');
   listingDiv.classList.add(
     'col-12',
@@ -26,8 +26,6 @@ export default function createHtmlById(data) {
 
     'align-items-baseline'
   );
-
-  listingTitleEl.textContent = title;
 
   const descEl = document.createElement('p');
   if (description) {
@@ -74,24 +72,20 @@ export default function createHtmlById(data) {
 
   const bidBtnEl = document.createElement('a');
   bidBtnEl.classList.add('bidLink', 'btn-main', 'btn', 'align-self-stretch');
-  bidBtnEl.textContent = 'Bid';
-  bidBtnEl.addEventListener('click', () => {
-    if (localStorage.getItem('accessToken')) {
-      // open modal to place a bid
+  if (localStorage.getItem('accessToken')) {
+    bidBtnEl.textContent = 'Bid';
+    bidBtnEl.addEventListener('click', () => {
       alert('bid');
-    } else {
-      // show a message, that user needs to register to bid
-      alert('please register');
-    }
-  });
-
-  descEl.append(endsAtEl);
+    });
+  } else {
+    bidBtnEl.style.display = 'none';
+  }
 
   listingBody.append(descEl);
   listingBody.append(tagsEl);
   listingBody.append(countEl);
   listingBody.append(bidBtnEl);
   listingDiv.append(listingBody);
-
+  listingBody.append(endsAtEl);
   container.append(listingDiv);
 }
