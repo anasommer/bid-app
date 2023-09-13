@@ -5,7 +5,7 @@ import { makeApiCall } from '../makeApiCall.js';
 
 export async function showListingById() {
   const id = getListingId();
-  const endpoint = `/auction/listings/${id}`;
+  const endpoint = `/auction/listings/${id}?_bids=true`;
   const method = 'GET';
 
   const options = createOptions(method);

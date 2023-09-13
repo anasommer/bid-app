@@ -1,6 +1,8 @@
 export default function createHtmlById(data) {
-  const { title, description, media, endsAt, _count, id, tags, updated } = data;
+  const { title, description, media, endsAt, _count, id, tags, updated, bids } =
+    data;
 
+  console.log(data);
   const container = document.querySelector('#detailsContainer');
   const listingTitleEl = document.querySelector('#listingTitle');
   listingTitleEl.textContent = title;
