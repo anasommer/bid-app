@@ -83,15 +83,17 @@ export default function createHtmlById(data) {
   messageEl.setAttribute('id', 'message');
   messageEl.classList.add('bidMessage');
   const bidInputEl = document.createElement('input');
-
   bidInputEl.setAttribute('type', 'text');
   bidInputEl.setAttribute('placeholder', 'Enter your bid');
   bidInputEl.classList.add('bidInput');
+
+  const credits = localStorage.getItem('credits');
   const bidBtnEl = document.createElement('a');
   bidBtnEl.textContent = 'Bid';
   bidBtnEl.classList.add('bidLink', 'btn-main', 'btn', 'align-self-stretch');
 
   const bidContainerEl = document.createElement('div');
+  bidContainerEl.textContent = `Your credit: ${credits}`;
   const bidsH2El = document.createElement('h3');
   bidsH2El.textContent = 'Bids placed:';
 
