@@ -25,7 +25,6 @@ export default function createHtmlById(data) {
     'col-lg-3',
     'h-100',
     'd-flex',
-
     'align-items-baseline'
   );
 
@@ -72,10 +71,24 @@ export default function createHtmlById(data) {
 
   endsAtEl.textContent = `Ends in: ${date.getDay()} day(s) ${date.getHours()} hour(s) ${date.getMinutes()} minutes`;
 
+  // HTML that will only registered users see
   const bidBtnEl = document.createElement('a');
+  const bidContainerEl = document.createElement('div');
+  const bidsH2El = document.createElement('h3');
+
+  const bidsUlEl = document.createElement('ol');
+  bidsH2El.textContent = 'Bids placed:';
   bidBtnEl.classList.add('bidLink', 'btn-main', 'btn', 'align-self-stretch');
+
   if (localStorage.getItem('accessToken')) {
     bidBtnEl.textContent = 'Bid';
+    bidContainerEl.append(bidsH2El);
+
+    bids.forEach((bid) => {
+      bidsUlEl.innerHTML += `<li>${bid.amount}$ by ${bid.bidderName}$</li>`;
+    });
+    bidContainerEl.append(bidsUlEl);
+
     bidBtnEl.addEventListener('click', () => {
       alert('bid');
     });
@@ -89,5 +102,6 @@ export default function createHtmlById(data) {
   listingBody.append(bidBtnEl);
   listingDiv.append(listingBody);
   listingBody.append(endsAtEl);
+  listingBody.append(bidContainerEl);
   container.append(listingDiv);
 }

@@ -11976,4 +11976,11 @@ li {
   color: #04787c;
 }
 
+h3, .h3 {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #04787c;
+}
+
 /*# sourceMappingURL=style.css.map */
