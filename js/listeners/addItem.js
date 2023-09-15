@@ -9,27 +9,26 @@ export async function addItem() {
     const formData = new FormData(event.target);
     const listing = Object.fromEntries(formData.entries());
     const { title, description, ends, tags, media } = listing;
-    console.log(listing);
+
     const endsAt = new Date(ends).toISOString();
-    console.log(endsAt);
+
     const endpoint = '/auction/listings';
     const method = 'POST';
     const bodyData = {
       title: title,
       description: description,
       endsAt: endsAt,
-      tags: tags,
-      media: Array.from(media),
+      tags: tags.split(','),
+      media: media.split(','),
     };
     const options = createOptions(method, bodyData);
 
     const { data, error } = await makeApiCall(endpoint, options);
 
     if (error) {
-      console.log(error);
       return displayMessage('danger', error);
     } else {
-      console.log(data);
+      location.replace(`/listings/details.html?id=${data.id}`);
     }
   });
 }
