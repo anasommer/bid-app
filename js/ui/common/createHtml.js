@@ -41,7 +41,12 @@ export default function createHtml(listings, container) {
     endsAtEl.classList.add('endTime');
     const date = new Date(endsAt);
 
-    endsAtEl.textContent = `Ends in: ${date.getDay()} day(s) ${date.getHours()} hour(s) ${date.getMinutes()} minutes`;
+    const today = new Date();
+    if (date <= today) {
+      endsAtEl.textContent = `Auction is ended`;
+    } else {
+      endsAtEl.textContent = `Ends in: ${date.getDay()} day(s) ${date.getHours()} hour(s) ${date.getMinutes()} minutes`;
+    }
 
     const bidBtnEl = document.createElement('a');
     bidBtnEl.setAttribute('href', `listings/details.html?id=${id}`);

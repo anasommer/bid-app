@@ -1,3 +1,5 @@
+import { placeBid } from '../../listeners/placeBid.js';
+
 export default function createHtmlById(data) {
   const { title, description, media, endsAt, _count, id, tags, updated, bids } =
     data;
@@ -69,19 +71,33 @@ export default function createHtmlById(data) {
   endsAtEl.classList.add('endTime');
   const date = new Date(endsAt);
 
-  endsAtEl.textContent = `Ends in: ${date.getDay()} day(s) ${date.getHours()} hour(s) ${date.getMinutes()} minutes`;
+  const today = new Date();
+  if (date <= today) {
+    endsAtEl.textContent = `Auction is ended`;
+  } else {
+    endsAtEl.textContent = `Ends in: ${date.getDay()} day(s) ${date.getHours()} hour(s) ${date.getMinutes()} minutes`;
+  }
 
   // HTML that will only registered users see
-  const bidBtnEl = document.createElement('a');
-  const bidContainerEl = document.createElement('div');
-  const bidsH2El = document.createElement('h3');
+  const messageEl = document.createElement('div');
+  messageEl.setAttribute('id', 'message');
+  messageEl.classList.add('bidMessage');
+  const bidInputEl = document.createElement('input');
 
-  const bidsUlEl = document.createElement('ol');
-  bidsH2El.textContent = 'Bids placed:';
+  bidInputEl.setAttribute('type', 'text');
+  bidInputEl.setAttribute('placeholder', 'Enter your bid');
+  bidInputEl.classList.add('bidInput');
+  const bidBtnEl = document.createElement('a');
+  bidBtnEl.textContent = 'Bid';
   bidBtnEl.classList.add('bidLink', 'btn-main', 'btn', 'align-self-stretch');
 
+  const bidContainerEl = document.createElement('div');
+  const bidsH2El = document.createElement('h3');
+  bidsH2El.textContent = 'Bids placed:';
+
+  const bidsUlEl = document.createElement('ol');
+
   if (localStorage.getItem('accessToken')) {
-    bidBtnEl.textContent = 'Bid';
     bidContainerEl.append(bidsH2El);
 
     bids.forEach((bid) => {
@@ -90,7 +106,7 @@ export default function createHtmlById(data) {
     bidContainerEl.append(bidsUlEl);
 
     bidBtnEl.addEventListener('click', () => {
-      alert('bid');
+      placeBid(bidInputEl.value, id);
     });
   } else {
     bidBtnEl.style.display = 'none';
@@ -99,9 +115,13 @@ export default function createHtmlById(data) {
   listingBody.append(descEl);
   listingBody.append(tagsEl);
   listingBody.append(countEl);
+  listingBody.append(bidInputEl);
   listingBody.append(bidBtnEl);
+
   listingDiv.append(listingBody);
+  listingBody.append(messageEl);
   listingBody.append(endsAtEl);
+
   listingBody.append(bidContainerEl);
   container.append(listingDiv);
 }

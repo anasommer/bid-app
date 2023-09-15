@@ -11983,4 +11983,15 @@ h3, .h3 {
   border-bottom: 1px solid #04787c;
 }
 
+.bidInput {
+  width: 100%;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.bidMessage {
+  margin-top: 1rem;
+  width: 100%;
+}
+
 /*# sourceMappingURL=style.css.map */
