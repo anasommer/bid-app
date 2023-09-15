@@ -43,7 +43,7 @@ export default function createHtml(listings, container) {
 
     const today = new Date();
     if (date <= today) {
-      endsAtEl.textContent = `Auction is ended`;
+      endsAtEl.textContent = `Auction ended`;
     } else {
       endsAtEl.textContent = `Ends in: ${date.getDay()} day(s) ${date.getHours()} hour(s) ${date.getMinutes()} minutes`;
     }

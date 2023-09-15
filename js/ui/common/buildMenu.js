@@ -20,6 +20,11 @@ export default function buildMenu() {
                             }" aria-current="page" href="/profile/profile.html">Profile</a>
                         </li>
                         <li class="nav-item">
+                        <a class="nav-link ${
+                          path === '/listings/add.html' ? 'active' : ''
+                        }" aria-current="page" href="/listings/add.html">Add listing</a>
+                    </li>
+                        <li class="nav-item">
                         <a
                           class="btn btn-warning" id="logout-btn"
                           aria-current="page"
