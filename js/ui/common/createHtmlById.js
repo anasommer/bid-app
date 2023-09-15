@@ -52,6 +52,7 @@ export default function createHtmlById(data) {
   if (media.length >= 1) {
     imageEl.setAttribute('src', media[0]);
     listingBody.append(imageEl);
+
     for (let i = 0; i < media.length; i++) {
       const img = document.createElement('img');
       img.setAttribute('src', media[i]);
@@ -64,6 +65,7 @@ export default function createHtmlById(data) {
     }
   } else {
     imageEl.setAttribute('src', '../../../img/no-image.jpeg');
+    listingBody.append(imageEl);
   }
   imageEl.classList.add('listingImg', 'thumbnail');
 
