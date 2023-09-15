@@ -23,12 +23,14 @@ export default function router() {
     case '/profile/profile.html':
       listeners.profile();
       break;
-
     case '/listings/index.html':
       showListingById();
       break;
     case '/listings/details.html':
       showListingById();
+      break;
+    case '/listings/add.html':
+      listeners.addItem();
       break;
   }
 }

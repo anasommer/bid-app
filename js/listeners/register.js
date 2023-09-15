@@ -1,5 +1,4 @@
 import { BASE_URL } from '../api/apiBase.js';
-import { makeApiCall } from '../api/makeApiCall.js';
 
 /**
  * Function for handling registration of a new user.
