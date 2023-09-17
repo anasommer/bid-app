@@ -25,7 +25,8 @@ export default function createHtmlById(data) {
     'col-lg-3',
     'h-100',
     'd-flex',
-    'align-items-baseline'
+    'align-items-baseline',
+    'box'
   );
 
   const descEl = document.createElement('p');

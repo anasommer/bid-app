@@ -17,7 +17,8 @@ export default function createHtml(listings, container) {
       'card',
       'h-100',
       'd-flex',
-      'align-items-baseline'
+      'align-items-baseline',
+      'box'
     );
 
     const titleEl = document.createElement('h2');
