@@ -36,16 +36,16 @@ I used CRUD methods to get, post, and put posts.
 1. Clone the repo:
 
 ```bash
-git clone git@github.com:anasommer/js2-ca.git
+git clone git@github.com:anasommer/bid-app.git
 ```
 
-1. Install dependencies
+2. Install dependencies
 
 ```
 npm i
 ```
 
-2. Build SASS
+3. Build SASS
 
 ```
 npm run build
