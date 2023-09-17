@@ -19,7 +19,7 @@ export async function addItem() {
       description: description,
       endsAt: endsAt,
       tags: tags.split(','),
-      media: media.split(','),
+      media: media ? media.split(',') : '',
     };
     const options = createOptions(method, bodyData);
 
