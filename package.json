@@ -28,5 +28,9 @@
     "*.scss": [
       "prettier --write"
     ]
+  },
+  "devDependencies": {
+    "@popperjs/core": "^2.11.8",
+    "jquery": "^3.7.1"
   }
 }
