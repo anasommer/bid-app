@@ -1,11 +1,14 @@
 import * as listeners from './listeners/index.js';
 import { showListingById } from './api/listings/showListingById.js';
+import handleSearch from './helpers/handleSearch.js';
 
 /**
  * Router for JS files
  */
 export default function router() {
   const pathname = window.location.pathname;
+
+  handleSearch();
 
   switch (pathname) {
     case '/':
