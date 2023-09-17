@@ -1,4 +1,6 @@
 import { search } from '../api/listings/search.js';
+import { displayMessage } from '../ui/common/displayMessage.js';
+
 import displaySearchResults from '../ui/common/displaySearchResults.js';
 import hideSearchResults from '../ui/common/hideSearchResults.js';
 
@@ -17,9 +19,9 @@ async function doSearch(event) {
 
   try {
     const results = await search(tag);
-    console.log(results);
+
     displaySearchResults(results);
   } catch (error) {
-    console.log(error);
+    displayMessage(error);
   }
 }

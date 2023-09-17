@@ -4,8 +4,6 @@ import { displayMessage } from '../ui/common/displayMessage.js';
 import { makeApiCall } from '../api/makeApiCall.js';
 
 export async function placeBid(bidValue, id) {
-  console.log(bidValue, id);
-
   const method = 'POST';
   const bodyData = {
     amount: +bidValue,
