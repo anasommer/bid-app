@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://anasommer.github.io/bid-app/",
   "scripts": {
     "build": "sass scss:css",
     "watch": "sass --watch scss:css"
