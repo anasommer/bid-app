@@ -6,7 +6,7 @@ export default function createHtml(listings, container) {
     listingDiv.classList.add(
       'col-12',
       'col-sm-6',
-      'col-lg-4',
+      'col-lg-6',
       'py-2',
       'd-flex'
     );
