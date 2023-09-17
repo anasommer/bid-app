@@ -28,6 +28,7 @@ export default function createHtml(listings, container) {
     const descEl = document.createElement('p');
     if (description) {
       descEl.textContent = description;
+      descEl.classList.add('mt-2');
     }
 
     const imageEl = document.createElement('img');
