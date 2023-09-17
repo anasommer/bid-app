@@ -2,6 +2,8 @@
 
 [Project plan in Trello](https://trello.com/invite/b/IiYfKAsm/ATTIee7157dd1f9617e65a72ab4292a95c7f69986830/semester-project-2)
 
+[Live project on Netlify](https://celadon-frangipane-06b6b4.netlify.app/)
+
 ## Goal
 
 To take the skills learned over the past three semesters and create an auction website.
