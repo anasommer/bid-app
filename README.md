@@ -4,21 +4,15 @@
 
 ## Goal
 
-Using the provided API and API documentation, create a functioning user interface that allows for viewing, posting, searching and bidding on auction listings.
+To take the skills learned over the past three semesters and create an auction website.
 
-To complete the required features, you will also need to make use of GET, POST, and PUT HTTP methods.
-
-Using localStorage is highly recommended, especially for storing JWT tokens.
-
-A finished project fulfils the requirements below with an easy to use and error-free user interface.
+To complete the required features, I used GET, POST, and PUT HTTP methods.
 
 ## Description
 
-The goal of the Semester Project 2 is to show student's Javascript, API and design techniques to implement the front-end functionality for a auction application.
+An auction site is looking to launch a website where users can add items to be bid on and bid on items other users have put up for auction.
 
-Using provided NorOff API and API documentation, I have been tasked to create a functioning user interface that allows for viewing, posting, searching and bidding on auction listings.
-
-I used CRUD methods to get, post, and put posts.
+When a new user joins the website, they are given 1000 credits to use on the site. They can get credits by selling items and use credit by buying items. Non-registered users can search through the listings, but only registered users can make bids on listings.
 
 ## Built With
 
